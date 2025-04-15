@@ -44,7 +44,7 @@ Generate the app apk file:
 Generate the Espresso Test apk file:
  - From your project root, run:
 
-    `/gradlew assembleDebugAndroidTest`  [mac]
+    `/gradlew assembleDebugAndroidTest`  [Mac] <br><br>
     `gradlew.bat assembleDebugAndroidTest` [Windows]
 - This will generate Espresso apk test file in `Speedtest-Android/app/build/outputs/apk/androidTest/debug`
 
