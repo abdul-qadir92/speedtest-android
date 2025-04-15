@@ -35,6 +35,21 @@ One or more servers with [LibreSpeed](https://github.com/librespeed/speedtest) i
 [![Donate with Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/fdossena/donate)  
 [Donate with PayPal](https://www.paypal.me/sineisochronic)  
 
+## BrowserStack Integration
+
+Generate the app apk file: 
+-   `Build > Make Project` or `Build > Build Bundle(s) / APK(s) > Build APK(s)`
+- File can be found in `Speedtest-Android/app/build/outputs/apk/debug`
+
+Generate the Espresso Test apk file:
+ - From your project root, run:
+
+    `/gradlew assembleDebugAndroidTest`  [mac]
+    `gradlew.bat assembleDebugAndroidTest` [Windows]
+- This will generate Espresso apk test file in `Speedtest-Android/app/build/outputs/apk/androidTest/debug`
+
+Follow the rest of the steps from the official [document](https://www.browserstack.com/docs/app-automate/espresso/getting-started)
+
 ## License
 Copyright (C) 2020 Federico Dossena
 
