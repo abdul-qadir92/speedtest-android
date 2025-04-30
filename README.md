@@ -50,6 +50,21 @@ Generate the Espresso Test apk file:
 
 Follow the rest of the steps from the official [document](https://www.browserstack.com/docs/app-automate/espresso/getting-started)
 
+   - Example CURL for triggering a build with custom annotation:
+	 - With `"strategy": "annotation"` only tests with that annotation will be run. 
+	 - With `"strategy": "notAnnotation"` the tests with that annotation gets skipped and all non-matching annotations will run
+	
+
+> curl -u "USER_KEY:ACCESS_KEY" \
+>     -X POST "https://api-cloud.browserstack.com/app-automate/espresso/v2/build" \
+>     -d '{"shards": {"numberOfShards": 2, "deviceSelection": "any", "mapping": [{"name": "Shard 1", "strategy": "notAnnotation", "values":
+> ["com.fdossena.speedtest.PrimeMarker"]}, 
+>     {"name": "Shard 2", "strategy": "annotation", "values": ["com.fdossena.speedtest.CompositeMarker"]}]}, "devices": ["Samsung
+> Galaxy S21-11.0", "Google Pixel 3-9.0"], "app": "bs://zzzzz",
+> "testSuite": "bs://yyyyy"}' \
+>     -H "Content-Type: application/json"
+
+
 ## License
 Copyright (C) 2020 Federico Dossena
 
